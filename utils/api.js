@@ -16,21 +16,21 @@ const mapContact = contact => {
 };
 
 const fetchContacts = async() =>{
-    const respone = await fetch('https://randomuser.me/api/?results=100&seed=fullstackio');
-    const contactData = await respone.json();
+    const respond = await fetch('https://randomuser.me/api/?results=100&seed=fullstackio');
+    const contactData = await respond.json();
     return contactData.results.map(mapContact);
 };
 
 const fetchUserContact = async() =>{
-    const respone = await fetch('https://randomuser.me/api/?seed=fullstackio');
-    const userData = await respone.json();
-    return mapContact(userData.res[0]);
+    const respond = await fetch('https://randomuser.me/api/?seed=fullstackio');
+    const userData = await respond.json();
+    return mapContact(userData.results[0]);
 };
 
-const fetchRamdomContact = async() =>{
-    const respone = await fetch('https://randomuser.me/api/');
-    const userData = await respone.json();
+const fetchRandomContact = async() =>{
+    const respond = await fetch('https://randomuser.me/api/');
+    const userData = await respond.json();
     return mapContact(userData.results[0]);
 }
 
-export {fetchContacts, fetchUserContact, fetchRamdomContact};
+export {fetchContacts, fetchUserContact, fetchRandomContact};

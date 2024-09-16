@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, FlatList, ActivityIndicator } from "react-nativ
 import { fetchContacts} from '../utils/api';
 import ContactListItem from "../component/ContactListItem";
 
-const keyExtrator = ({phone}) => phone;
+const keyExtractor = ({phone}) => phone;
 const Contacts = ({navigation})=>
 {
     const [contacts, setContacts] = useState([]);
@@ -45,7 +45,7 @@ const Contacts = ({navigation})=>
             {!loading && !error && (
                 <FlatList
                     data = {contactsSorted}
-                    keyExtractor={keyExtrator}
+                    keyExtractor={keyExtractor}
                     renderItem={renderContact}
                 />
             )}
